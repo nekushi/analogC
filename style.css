@@ -1,0 +1,59 @@
+* {
+    user-select: none;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    height: 97vh;
+}
+.main-container {
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+}
+.clock {
+    border-radius: 50%;
+    width: 90%;
+    aspect-ratio: 1 / 1;
+    border: 10px solid;
+    position: relative;
+}
+.point, .hour-hand, .minute-hand, .second-hand {
+    position: absolute;
+    transition: transform 300ms;
+}
+.hour-hand, .minute-hand, .second-hand {
+    transform-origin: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(0, -50%);
+    transition: transform linear;
+}
+.point {
+    border: 7px solid;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+.hour-hand {
+    width: 30%;
+    height: 5px;
+    background: #E00;
+}
+.minute-hand {
+    width: 40%;
+    height: 5px;
+    background: #212121;
+}
+.second-hand {
+    width: 45%;
+    height: 3px;
+    background: #000;
+    /* transform: rotate(135deg); */
+}
